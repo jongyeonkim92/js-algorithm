@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(n) {
+        let sum = 0;
+        for (let i = 1; i <= n; i++) {
+          sum += i;
+        }
+        return sum;
+
+        // 가우스의 덧셈 공식
+        // return (n * (n + 1)) / 2;
+      }
+
+      console.log(solution(6));
+    </script>
+  </body>
+</html>
