@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(a, b, c) {
+        // 코드 1
+        // let total = a + b + c;
+        // let max = Math.max(a, b, c);
+        // if (total - max <= max) return "NO";
+        // else return "YES";
+
+        let max = Math.max(a, b, c);
+        let sum = a + b + c - max; // 나머지 두 변의 합
+        return sum > max ? "YES" : "NO";
+      }
+
+      console.log(solution(6, 7, 11));
+    </script>
+  </body>
+</html>
