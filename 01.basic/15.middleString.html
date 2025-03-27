@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let mid = Math.floor(s.length / 2);
+        let answer = s.length % 2 !== 0 ? s[mid] : s[mid - 1] + s[mid];
+        return answer;
+        // return s.length % 2 !== 0 ? s[mid] : s.substring(mid - 1, mid + 1);
+      }
+      console.log(solution("study"));
+    </script>
+  </body>
+</html>
