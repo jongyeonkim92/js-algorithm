@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(day, arr) {
+        // let answer = [];
+        // for (let num of arr) {
+        //   if (num % 10 === day) {
+        //     answer.push(num);
+        //   }
+        // }
+        // return answer.length;
+        return arr.filter((num) => num % 10 === day).length;
+      }
+
+      arr = [25, 20, 11, 47, 53, 17, 33];
+      console.log(solution(3, arr));
+    </script>
+  </body>
+</html>
