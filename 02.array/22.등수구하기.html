@@ -6,14 +6,26 @@
   <body>
     <script>
       function solution(arr) {
-        let n = arr.length;
-        let answer = Array.from({ length: n }, () => 1);
-        for (let i = 0; i < n; i++) {
-          for (let j = 0; j < n; j++) {
-            if (arr[j] > arr[i]) answer[i]++;
+        let answer = Array.from({ length: arr.length }, () => 1);
+        for (let i = 0; i < arr.length; i++) {
+          for (let j = 0; j < arr.length; j++) {
+            if (arr[i] < arr[j]) {
+              answer[i]++;
+            }
           }
         }
         return answer;
+
+        /*
+        let sorted = [...arr].sort((a, b) => b - a); // 내림차순 정렬
+        let rankMap = new Map();
+
+        sorted.forEach((score, index) => {
+          if (!rankMap.has(score)) rankMap.set(score, index + 1);
+        });
+
+        return arr.map((score) => rankMap.get(score));
+        */
       }
 
       let arr = [87, 89, 92, 100, 76];
