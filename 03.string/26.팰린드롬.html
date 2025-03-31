@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(str) {
+        // let s = str.replace(/[^a-zA-Z]/g, "").toLowerCase();
+        let s = s.toLowerCase().replace(/[^a-z]/g, "");
+        let len = s.length;
+        // let answer = "YES";
+        // for (let i = 0; i < Math.floor(len / 2); i++) {
+        //   if (s[i] !== s[len - 1 - i]) {
+        //     answer = "NO";
+        //   }
+        // }
+        // return answer;
+        return s.split("").reverse().join("") === s ? "YES" : "NO";
+      }
+
+      let str = "found7, time: study; Yduts; emit, 7Dnuof";
+      console.log(solution(str));
+    </script>
+  </body>
+</html>
