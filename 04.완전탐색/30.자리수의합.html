@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        let max = 0;
+        let answer = 0;
+        for (let x of arr) {
+          // 1번
+          let sum = 0;
+          let temp = x;
+          while (temp) {
+            sum += temp % 10;
+            temp = Math.floor(temp / 10);
+          }
+
+          // // 2번
+          // let sum = x
+          //   .toString()
+          //   .split("")
+          //   .reduce((a, b) => Number(a) + Number(b), 0);
+
+          if (sum > max) {
+            max = sum;
+            answer = x;
+          } else if (sum === max) {
+            if (x > answer) {
+              answer = x;
+            }
+          }
+        }
+        return answer;
+      }
+
+      let arr = [128, 460, 603, 40, 521, 137, 123];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>
