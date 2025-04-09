@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(test) {
+        let answer = 0;
+        m = test.length; // 시험 횟수
+        n = test[0].length; // 학생 수
+
+        for (let i = 1; i <= n; i++) {
+          for (let j = 1; j <= n; j++) {
+            let cnt = 0;
+            for (let k = 0; k < m; k++) {
+              let pi = (pj = 0);
+              for (let s = 0; s < n; s++) {
+                if (test[k][s] === i) pi = s;
+                if (test[k][s] === j) pj = s;
+              }
+              if (pi < pj) cnt++;
+            }
+            if (cnt === m) answer++;
+          }
+        }
+
+        // // 각 시험마다 학생 번호 → 순위 매핑
+        // const rank = Array.from({ length: m }, () => Array(n + 1).fill(0));
+        // for (let i = 0; i < m; i++) {
+        //   for (let j = 0; j < n; j++) {
+        //     rank[i][test[i][j]] = j; // test[i][j]는 학생 번호, j는 순위
+        //   }
+        // }
+
+        // // 모든 멘토-멘티 쌍 조사
+        // for (let i = 1; i <= n; i++) {
+        //   for (let j = 1; j <= n; j++) {
+        //     if (i === j) continue;
+        //     let cnt = 0;
+        //     for (let k = 0; k < m; k++) {
+        //       if (rank[k][i] < rank[k][j]) cnt++;
+        //     }
+        //     if (cnt === m) answer++;
+        //   }
+        // }
+
+        return answer;
+      }
+
+      let arr = [
+        [3, 4, 1, 2],
+        [4, 3, 2, 1],
+        [3, 1, 4, 2]
+      ];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>
