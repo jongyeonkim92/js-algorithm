@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(k, card) {
+        let answer;
+        let n = card.length;
+        let tmp = new Set();
+        for (let i = 0; i < n; i++) {
+          for (let j = i + 1; j < n; j++) {
+            for (let k = j + 1; k < n; k++) {
+              tmp.add(card[i] + card[j] + card[k]);
+            }
+          }
+        }
+        let sortedTmp = Array.from(tmp).sort((a, b) => b - a);
+        answer = sortedTmp[k - 1];
+        return answer;
+
+        // const sums = [];
+
+        // for (let i = 0; i < n - 2; i++) {
+        //   for (let j = i + 1; j < n - 1; j++) {
+        //     for (let l = j + 1; l < n; l++) {
+        //       const sum = card[i] + card[j] + card[l];
+        //       if (!sums.includes(sum)) sums.push(sum); // 중복 합 방지
+        //     }
+        //   }
+        // }
+
+        // sums.sort((a, b) => b - a); // 내림차순 정렬
+        // return sums[k - 1];
+      }
+
+      let arr = [13, 15, 34, 23, 45, 65, 33, 11, 26, 42];
+      console.log(solution(3, arr));
+    </script>
+  </body>
+</html>
